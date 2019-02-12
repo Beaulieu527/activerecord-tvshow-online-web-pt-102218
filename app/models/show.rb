@@ -8,16 +8,17 @@ class Show < ActiveRecord::Base
   end
 
   def self.most_popular_show
-   Show.where("rating = ?", Show.lowest_rating)[0]
+   Show.where(:rating = ?, Show.lowest_rating)[0]
   end
 
   def self.lowest_rating
-    Show.minimum("rating")
+    Show.minimum(:rating)
   end
 
   def self.ratings_sum
-    Show.sum("rating")
+    Show.sum(:rating)
   end
 
+  def
 
 end
